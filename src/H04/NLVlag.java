@@ -11,14 +11,15 @@ public class NLVlag extends Applet {
     }
 
     public void paint(Graphics g) {
-        setBackground(Color.blue);
-        g.setColor(Color.yellow);
-        g.drawRect(200, 200, 100, 100);
-        g.drawRect(270, 225, 15, 15);
-        g.drawRect(225, 250, 25, 50);
-        g.drawLine(200, 200, 300, 200);
-        g.drawLine(250, 125, 300, 200);
-        g.drawLine(250, 125, 200, 200);
+        setBackground(Color.green);
+        g.setColor(Color.blue);
+        g.fillRect(50, 130, 200, 50);
+        g.setColor(Color.white);
+        g.fillRect(50, 80, 200, 50);
+        g.setColor(Color.red);
+        g.fillRect(50, 30, 200, 50);
+        g.setColor(Color.white);
+        g.fillRect(40, 30, 10, 300);
 
     }
 }
