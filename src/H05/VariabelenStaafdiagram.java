@@ -3,60 +3,67 @@ package H05;
 /**
  * Created by HP on 15-9-2016.
  */
+import com.sun.xml.internal.ws.developer.ValidationErrorHandler;
+
 import java.awt.*;
 import java.applet.*;
 
 public class VariabelenStaafdiagram extends Applet {
     Color achtergrondkleur;
     Color tekstkleur;
-    Color Valerie;
-    Color Jeroen;
-    Color Hans;
+    Color Valeriekleur;
+    Color Jeroenkleur;
+    Color Hanskleur;
     Color lijnkleur;
-    int Breedte;
-    int Hoogte;
+    int Valerie;
+    int Jeroen;
+    int Hans;
+
 
     public void init() {
         achtergrondkleur = Color.blue;
         setBackground(achtergrondkleur);
         tekstkleur = Color.black;
-        Valerie = Color.pink;
-        Jeroen = Color.yellow;
-        Hans = Color.green;
-        Breedte = 50;
-        Hoogte = 100;
+        Valeriekleur = Color.pink;
+        Jeroenkleur = Color.yellow;
+        Hanskleur = Color.green;
         lijnkleur = Color.black;
+
+        //Gewichten
+        Valerie = 20;
+        Jeroen = 50;
+        Hans = 60;
     }
 
     public void paint(Graphics g) {
         //Waardes Valerie
         g.setColor(Color.black);
         g.drawLine(80, 170, 290, 170);
-        g.setColor(Valerie);
-        g.fillRect(100, 170, Breedte, Hoogte-20);
-        g.setColor(Valerie);
+        g.setColor(Valeriekleur);
+        g.fillRect(100, 250-Valerie*2, 50, Valerie*2);
+        g.setColor(Valeriekleur);
         g.drawString("40kg", 50, 175 );
-        g.setColor(Valerie);
+        g.setColor(Valeriekleur);
         g.drawString("Valerie", 100, 270 );
 
         //Waardes Jeroen
         g.setColor(Color.black);
         g.drawLine(80, 50, 290, 50);
-        g.setColor(Jeroen);
-        g.fillRect(170, 50, Breedte, Hoogte+100);
-        g.setColor(Jeroen);
+        g.setColor(Jeroenkleur);
+        g.fillRect(170, 250-Jeroen*2, 50, Jeroen*2);
+        g.setColor(Jeroenkleur);
         g.drawString("100kg", 45, 55 );
-        g.setColor(Jeroen);
+        g.setColor(Jeroenkleur);
         g.drawString("Jeroen", 170, 270 );
 
         //Waardes Hans
         g.setColor(Color.black);
         g.drawLine(80, 90, 290, 90);
-        g.setColor(Hans);
-        g.fillRect(240, 90, Breedte, Hoogte+60);
-        g.setColor(Hans);
+        g.setColor(Hanskleur);
+        g.fillRect(240, 250-Hans*2, 50, Hans*2);
+        g.setColor(Hanskleur);
         g.drawString("80kg", 50, 95 );
-        g.setColor(Hans);
+        g.setColor(Hanskleur);
         g.drawString("Hans", 240, 270 );
 
         //waardes
