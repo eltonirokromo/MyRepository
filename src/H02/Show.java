@@ -15,10 +15,10 @@ import java.applet.*;
         public void paint(Graphics g) {
             g.setColor(Color.blue);
             g.drawString("Elton", 50, 60 );
-            g.setColor(Color.yellow);
-            g.drawString("Irokromo", 80, 60 );
-            g.setColor(Color.yellow);
-            g.drawString("Elton Irokromo", 100, 110 );
+            g.setColor(Color.blue);
+            g.drawString("Elton", 80, 60 );
+            g.setColor(Color.red);
+            g.drawString("Irokromo", 80, 70 );
 
         }
     }

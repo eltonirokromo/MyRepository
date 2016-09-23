@@ -30,9 +30,9 @@ public class VariabelenStaafdiagram extends Applet {
         lijnkleur = Color.black;
 
         //Gewichten
-        Valerie = 20;
-        Jeroen = 50;
-        Hans = 60;
+        Valerie = 30;
+        Jeroen = 60;
+        Hans = 70;
     }
 
     public void paint(Graphics g) {
