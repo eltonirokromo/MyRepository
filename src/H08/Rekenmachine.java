@@ -6,7 +6,6 @@ package H08;
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
-import java.text.Normalizer;
 
 public class Rekenmachine extends Applet {
     TextField tekstvak;
