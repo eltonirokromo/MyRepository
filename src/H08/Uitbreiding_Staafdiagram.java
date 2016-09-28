@@ -93,7 +93,7 @@ public class Uitbreiding_Staafdiagram extends Applet {
             g.setColor(Valeriekleur);
             g.fillRect(100, 250-(40+V)*2, 50, (40+V)*2);
             g.setColor(Valeriekleur);
-            g.drawString("Valerie", 100, 270 );
+            g.drawString("Valerie", 107, 270 );
 
             //Waardes Jeroen
             g.setColor(Color.black);
@@ -101,7 +101,7 @@ public class Uitbreiding_Staafdiagram extends Applet {
             g.setColor(Jeroenkleur);
             g.fillRect(170, 250-(100+J)*2, 50, (100+J)*2);
             g.setColor(Jeroenkleur);
-            g.drawString("Jeroen", 170, 270 );
+            g.drawString("Jeroen", 175, 270 );
 
             //Waardes Hans
             g.setColor(Color.black);
@@ -109,7 +109,7 @@ public class Uitbreiding_Staafdiagram extends Applet {
             g.setColor(Hanskleur);
             g.fillRect(240, 250-(80+H)*2, 50, (80+H)*2);
             g.setColor(Hanskleur);
-            g.drawString("Hans", 240, 270 );
+            g.drawString("Hans", 250, 270 );
 
             //waardes
             g.setColor(tekstkleur);
