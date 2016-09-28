@@ -10,13 +10,14 @@ import java.awt.event.*;
 public class Rekenmachine extends Applet {
     TextField tekstvak;
     TextField tekstvak1;
-    double getal;
-    double getal1;
-    double uitkomst;
     Button keer;
     Button delen;
     Button Plus;
     Button min;
+
+    double getal;
+    double getal1;
+    double uitkomst;
     String g1;
     String g2;
 
