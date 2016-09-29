@@ -150,7 +150,7 @@ public class Gemiddelde_Cijfer extends Applet {
             repaint();
 
             gemiddelde = (cijferdouble + cijfer1double) / 2;
-            if (gemiddelde >= 5.5 && gemiddelde < 10) {
+            if (gemiddelde >= 5.5 && gemiddelde <= 10) {
                 tekst2 = ""+ gemiddelde + " Je bent geslaagd!!";
             }
             else {

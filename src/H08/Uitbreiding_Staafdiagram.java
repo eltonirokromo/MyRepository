@@ -46,11 +46,21 @@ public class Uitbreiding_Staafdiagram extends Applet {
             Hanskleur = Color.green;
             lijnkleur = Color.black;
 
+        //class
+        UpdateKnopListener ukl = new UpdateKnopListener();
+        UpdateKnopListener1 ukl1 = new UpdateKnopListener1();
+        UpdateKnopListener2 ukl2 = new UpdateKnopListener2();
+        UpdateKnopListener3 ukl3 = new UpdateKnopListener3();
 
         //TextFields
         vak1 = new TextField("", 3);
+        vak1.addActionListener(ukl);
+
         vak2 = new TextField("", 3);
+        vak2.addActionListener(ukl1);
+
         vak3 = new TextField("", 3);
+        vak3.addActionListener(ukl2);
 
         //Label
         v1 = new Label("Valerie");
@@ -59,8 +69,8 @@ public class Uitbreiding_Staafdiagram extends Applet {
 
         //Buttons
         Update = new Button ("update");
-        UpdateKnopListener ukl = new UpdateKnopListener();
-        Update.addActionListener(ukl);
+        Update.addActionListener(ukl3);
+
 
         //layout
         add(v1);
@@ -74,6 +84,36 @@ public class Uitbreiding_Staafdiagram extends Applet {
     }
 
     class UpdateKnopListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            getal1 = Integer.parseInt(vak1.getText());
+            V = getal1 - 40;
+            repaint();
+        }
+    }
+
+    class UpdateKnopListener1 implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            getal2 = Integer.parseInt(vak2.getText());
+            J = getal2 - 100;
+            repaint();
+        }
+    }
+
+    class UpdateKnopListener2 implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            getal3 = Integer.parseInt(vak3.getText());
+            H = getal3 - 80;
+            repaint();
+        }
+    }
+
+    class UpdateKnopListener3 implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
