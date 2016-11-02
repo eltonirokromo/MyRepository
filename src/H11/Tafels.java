@@ -10,85 +10,72 @@ import java.awt.event.*;
 
 
 public class Tafels extends Applet {
-    TextField tekstvak;
-    Label label;
-    String s, tekst;
-    Button ok;
-    int cijfer;
-    int teller = 1;
-    int y = 20;
-    int x = 20;
-    int A = 1;
-    int B = 3;
-    int C = 0;
 
+    int x = 50;
+    private int y = 30;
+    private int tafel = 3;
+    private TextField tf;
+    private Font font = new Font("default", Font.BOLD, 20);
+    private Boolean TrueFalse;
 
+    @Override
     public void init() {
-        tekstvak = new TextField("", 20);
-        TekstvakListener tl = new TekstvakListener();
-        tekstvak.addActionListener( tl );
+        super.init();
+        TafelListener tl = new TafelListener();
+        tf = new TextField("", 5);
+        add(tf);
+        tf.addActionListener((tl));
 
-        label = new Label("Type een getal in");
-        tekst = "";
-
-        ok = new Button("enter");
-        ok.addActionListener( tl );
-
+        Label label = new Label("Type een getal in");
         add(label);
-        add(tekstvak);
+
+        Button ok = new Button("Enter");
+        ok.addActionListener((tl));
         add(ok);
+
+        TafelListenerRepeat ntl = new TafelListenerRepeat();
+        Button next = new Button("Next");
+        next.addActionListener((ntl));
+        add(next);
     }
 
-    public void paint(Graphics g) {
-        g.drawString(tekst, 50, 60 );
-    }
 
-    class TekstvakListener implements ActionListener {
+    private class TafelListener implements ActionListener {
+        @Override
         public void actionPerformed(ActionEvent e) {
-            s = tekstvak.getText();
-            cijfer = Integer.parseInt( s);
-            switch(cijfer) {
-                case 1:
-                    tekst = "1" +
-                            "2" +
-                            "3" +
-                            "4" +
-                            "5" +
-                            "6" +
-                            "7";
-                    break;
-                case 2:
-                    tekst = "Slecht, mag je wel beter doen..";
-                    break;
-                case 3:
-                    tekst = "Slecht, mag je wel beter doen..";
-                    break;
-                case 4:
-                    tekst = "Onvoldoende, mag je wel beter doen..";
-                    break;
-                case 5:
-                    tekst = "Matig, kan het niet beter?";
-                    break;
-                case 6:
-                    tekst = "Voldoende, kan er wel mee door..";
-                    break;
-                case 7:
-                    tekst = "Voldoende, kan er wel mee door..";
-                    break;
-                case 8:
-                    tekst = "Goed, ik ben trots op je!!";
-                    break;
-                case 9:
-                    tekst = "Goed, Nog beter dan een 8!!";
-                    break;
-                case 10:
-                    tekst = "Goed, er is niks beter dan perfectie!";
-                    break;
-                default:
-                    tekst = "Hoger dan een 10? Mag je dromen..";
-                    break;
-            }
+
+            tafel = Integer.valueOf(tf.getText());
+            tf.setText("");
+            TrueFalse = true;
             repaint();
+
+        }
+    }
+    private class TafelListenerRepeat implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            tafel++;
+            repaint();
+        }
+    }
+
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        if (TrueFalse) {
+            for (int teller=1; teller <= 10; teller++) {
+                y += 20;
+
+
+                int antwoord = tafel * teller;
+                g.setFont(font);
+                g.drawString(teller + " x " + tafel + " = " + antwoord, x, y);
+
+            }
+            y=30;
         }
     }
 }
