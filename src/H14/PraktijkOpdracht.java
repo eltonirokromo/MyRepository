@@ -23,7 +23,7 @@ public class PraktijkOpdracht extends Applet {
     boolean spelen = true;
     boolean gewonnen;
     boolean verloren;
-    boolean winface;
+    boolean gewonnenlijn;
     boolean test = true;
 
     int hulp1;
@@ -69,7 +69,7 @@ public class PraktijkOpdracht extends Applet {
             verloren = false;
             gewonnen = false;
             spelen = true;
-            winface = false;
+            gewonnenlijn = false;
             test = true;
             repaint();
         }
@@ -92,33 +92,33 @@ public class PraktijkOpdracht extends Applet {
         if (invoer > 0 && invoer < 4 && spel > 0 && spel >= invoer) {
             spel -= invoer;
             hulp2 = invoer;
-            hulp1 = 69;
+            hulp1 = 70;
 
             geklikt = true;
             if (spel != 21 && spel > 20) {
                 int hulp = spel - 21;
                 spel -= hulp;
-                winface = true;
+                gewonnenlijn = true;
             } else if (spel != 17 && spel > 16 && spel < 21) {
                 int hulp = spel - 17;
                 spel -= hulp;
-                winface = true;
+                gewonnenlijn = true;
             } else if (spel != 13 && spel > 12 && spel < 17) {
                 int hulp = spel - 13;
                 spel -= hulp;
-                winface = true;
+                gewonnenlijn = true;
             } else if (spel != 9 && spel > 8 && spel < 13) {
                 int hulp = spel - 9;
                 spel -= hulp;
-                winface = true;
+                gewonnenlijn = true;
             } else if (spel != 5 && spel > 4 && spel < 9) {
                 int hulp = spel - 5;
                 spel -= hulp;
-                winface = true;
+                gewonnenlijn = true;
             } else if (spel != 1 && spel > 0 && spel < 5) {
                 int hulp = spel - 1;
                 spel -= hulp;
-                winface = true;
+                gewonnenlijn = true;
             } else {
                 int random = new Random().nextInt(3) + 1;
                 spel -= random;
@@ -128,14 +128,14 @@ public class PraktijkOpdracht extends Applet {
                 repaint();
             }
             //win/lose
-            if (spel <= hulp2 && hulp1 == 69) {
+            if (spel <= hulp2 && hulp1 == 70) {
                 geklikt = false;
                 spelen = false;
                 gewonnen = false;
                 verloren = true;
                 test = false;
             }
-            if (spel <= hulp1 && hulp2 == 69) {
+            if (spel <= hulp1 && hulp2 == 70) {
                 geklikt = false;
                 spelen = false;
                 gewonnen = true;
@@ -170,7 +170,7 @@ public class PraktijkOpdracht extends Applet {
                 x2 = 50;
                 y2 += 50;
             }
-            if (winface) {
+            if (gewonnenlijn) {
                 g.drawImage(smiley, x2, y2, 50, 50, this);
             } else {
                 g.drawImage(pokerface, x2, y2, 50, 50, this);
