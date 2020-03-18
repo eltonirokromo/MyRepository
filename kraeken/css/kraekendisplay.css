@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: black;
+  z-index: 99;
+  text-align: center;
+  border-bottom:2px solid rgb(0,0,0);padding-bottom:10px;
+}
+
+#navbar a {
+  text-align: center;
+  display: inline-block;
+  color: white;
+  padding: 20px 23px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+#navbar a:hover {
+  background-color: #ffffff00;
+  color: orange;
+}
+
+#navbar a.active {
+  background-color: #ffffff00;
+  color: orange;
+}
+
+.content {
+  padding: 16px;
+}
+
+
+h3, h2, p{
+  text-align:center;
+}
+
+table, th, td{
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 580px;
+  height: 40px;
+}
+
+.centera {
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 7px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=time], select {
+  width: 100%;
+  padding: 7px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
